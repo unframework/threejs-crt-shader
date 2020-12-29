@@ -6,7 +6,6 @@ import * as THREE from 'three';
 import { KonvaTerminalCanvas } from './components/KonvaTerminalCanvas';
 import { TestScene } from './TestScene';
 import { TestKonvaContent } from './TestKonvaContent';
-import { TestXtermContent } from './TestXtermContent';
 
 import './index.css';
 
