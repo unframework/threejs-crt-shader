@@ -1,6 +1,6 @@
 import React, { useMemo, useEffect, useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
-import { useSpring, animated } from 'react-spring/three';
+import { useSpring, animated } from '@react-spring/three';
 import { useGLTF } from '@react-three/drei/useGLTF';
 import { Environment } from '@react-three/drei/Environment';
 import * as THREE from 'three';
