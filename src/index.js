@@ -26,12 +26,7 @@ const App = () => {
         onCreated={({ gl, setDefaultCamera }) => {
           gl.toneMapping = THREE.ACESFilmicToneMapping;
           gl.toneMappingExposure = 0.9;
-
           gl.outputEncoding = THREE.sRGBEncoding;
-
-          if (!cameraRef.current) {
-            throw new Error('no camera');
-          }
 
           setDefaultCamera(cameraRef.current);
         }}
