@@ -1,0 +1,36 @@
+{
+  "name": "threejs-crt-shader",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "storybook": "start-storybook -p 6006 -s public --no-dll",
+    "build-storybook": "build-storybook -s public --no-dll"
+  },
+  "author": "Nick Matantsev <nick.matantsev@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@react-spring/three": "^9.0.0-rc.3",
+    "@react-three/drei": "^2.2.13",
+    "@types/node": "^14.14.11",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "konva": "^4.0.4",
+    "onecolor": "^3.1.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-konva": "^16.9.0-0",
+    "react-three-fiber": "^5.3.1",
+    "react-use-gesture": "^9.0.0-beta.11",
+    "three": "^0.121.0",
+    "typescript": "^3.9.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@storybook/addon-actions": "^6.0.28",
+    "@storybook/react": "^6.0.28",
+    "babel-loader": "^8.2.1",
+    "prettier": "^2.0.5",
+    "react-is": "^16.8.0"
+  }
+}
