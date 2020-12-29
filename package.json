@@ -1,7 +1,7 @@
 {
   "name": "threejs-crt-shader",
   "version": "0.0.1",
-  "description": "",
+  "description": "Experiment: rendering custom canvas contents in a simulated 3D CRT monitor",
   "main": "index.js",
   "scripts": {
     "storybook": "start-storybook -p 6006 -s public --no-dll",
