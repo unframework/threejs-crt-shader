@@ -1,5 +1,7 @@
 # threejs-crt-shader
 
+![sample screenshot of 3D CRT effect](https://github.com/unframework/threejs-crt-shader/raw/0244db0f8d8fba2467fdb295238da67fa747263f/threejs-crt-shader-sample-20201229.jpg)
+
 Experimenting with displaying React content into a WebGL CRT effect material.
 
 [Live demo sandbox](https://codesandbox.io/s/github/unframework/threejs-crt-shader) (be sure to maximize view window for scanlines to show up).
