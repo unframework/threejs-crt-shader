@@ -1,6 +1,9 @@
 import React, { useCallback, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { Stage, Layer } from 'react-konva';
+import Konva from 'konva';
+
+Konva.pixelRatio = 1; // on mobile, stick to 1:1 size
 
 export const KonvaTerminalCanvas: React.FC<{
   width: number;
