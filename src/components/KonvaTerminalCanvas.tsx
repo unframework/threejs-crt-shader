@@ -9,10 +9,10 @@ Konva.pixelRatio = 1; // on mobile, stick to 1:1 size
 export const KonvaTerminalCanvas: React.FC<{
   width: number;
   height: number;
-  canvasContextRef: React.MutableRefObject<
-    CanvasRenderingContext2D | undefined
+  canvasRef: React.MutableRefObject<
+    HTMLCanvasElement | undefined
   >;
-}> = ({ width, height, canvasContextRef, children }) => {
+}> = ({ width, height, canvasRef, children }) => {
   // read once (no support for resizing)
   const widthRef = useRef(width);
   const heightRef = useRef(height);
@@ -21,12 +21,12 @@ export const KonvaTerminalCanvas: React.FC<{
     (layerNode) => {
       if (layerNode) {
         const sourceCanvas = layerNode.canvas._canvas;
-        canvasContextRef.current = sourceCanvas.getContext('2d');
+        canvasRef.current = sourceCanvas;
       } else {
-        canvasContextRef.current = undefined;
+        canvasRef.current = undefined;
       }
     },
-    [canvasContextRef]
+    [canvasRef]
   );
 
   return ReactDOM.createPortal(

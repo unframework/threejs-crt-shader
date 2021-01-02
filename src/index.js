@@ -11,11 +11,11 @@ import { TestKonvaContent } from './TestKonvaContent';
 import './index.css';
 
 const App = () => {
-  const ctxRef = useRef();
+  const canvasRef = useRef();
 
-  const [canvasContext, setCanvasContext] = useState(null);
+  const [canvas, setCanvas] = useState(null);
   useEffect(() => {
-    setCanvasContext(ctxRef.current);
+    setCanvas(canvasRef.current);
   }, []);
 
   const cameraRef = useRef();
@@ -32,12 +32,12 @@ const App = () => {
           setDefaultCamera(cameraRef.current);
         }}
       >
-        {canvasContext && (
-          <TestScene cameraRef={cameraRef} canvasContext={canvasContext} />
+        {canvas && (
+          <TestScene cameraRef={cameraRef} canvas={canvas} />
         )}
       </Canvas>
 
-      <KonvaTerminalCanvas width={180} height={160} canvasContextRef={ctxRef}>
+      <KonvaTerminalCanvas width={180} height={160} canvasRef={canvasRef}>
         <TestKonvaContent width={180} height={160} />
       </KonvaTerminalCanvas>
     </div>

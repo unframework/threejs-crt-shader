@@ -8,7 +8,7 @@ import { useGesture } from 'react-use-gesture';
 
 import { CRTMaterial } from './components/CRTMaterial';
 
-const MonitorCube = React.memo(({ canvasContext }) => {
+const MonitorCube = React.memo(({ canvas }) => {
   // simple box body with CRT surface nudged closer to viewer to avoid Z-fighting
   const boxWidth = 4 / 3;
   const boxHeight = 1;
@@ -32,7 +32,7 @@ const MonitorCube = React.memo(({ canvasContext }) => {
           metalness={0.96}
           envMapIntensity={0.1}
           // screen contents
-          canvasContext={canvasContext}
+          canvas={canvas}
           // colour grading for the CRT emissive display
           crtFgColor={new THREE.Color('#f7f2e0')}
           crtBgColor={new THREE.Color('#100400')}
@@ -47,7 +47,7 @@ const MonitorCube = React.memo(({ canvasContext }) => {
   );
 });
 
-export const TestScene = ({ cameraRef, canvasContext }) => {
+export const TestScene = ({ cameraRef, canvas }) => {
   const { pos, up } = useSpring({
     from: {
       pos: [-1, -8, 1],
@@ -110,7 +110,7 @@ export const TestScene = ({ cameraRef, canvasContext }) => {
 
       <React.Suspense fallback={<></>}>
         <animated.group rotation={monitorRotation}>
-          <MonitorCube canvasContext={canvasContext} />
+          <MonitorCube canvas={canvas} />
         </animated.group>
 
         <Environment preset="warehouse" />

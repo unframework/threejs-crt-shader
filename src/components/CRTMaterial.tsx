@@ -138,7 +138,7 @@ const fragmentChunk = `
 
 export const CRTMaterial: React.FC<
   {
-    canvasContext: CanvasRenderingContext2D;
+    canvas: HTMLCanvasElement;
     crtBgColor: THREE.Color;
     crtFgColor: THREE.Color;
     crtPlaneOrigin: THREE.Vector3 | number[];
@@ -150,7 +150,7 @@ export const CRTMaterial: React.FC<
     'emissive' | 'emissiveMap' | 'onBeforeCompile'
   >
 > = ({
-  canvasContext,
+  canvas,
   crtFgColor,
   crtBgColor,
   crtPlaneOrigin,
@@ -168,7 +168,7 @@ export const CRTMaterial: React.FC<
   // (this is never uploaded to GPU directly)
   const canvasTexture = useMemo(() => {
     // @todo fix deps
-    return new THREE.Texture(canvasContext.canvas);
+    return new THREE.Texture(canvas);
   }, []);
 
   // basic sizing
@@ -178,14 +178,14 @@ export const CRTMaterial: React.FC<
     const textureW = 512; // @todo pick smallest possible
     const textureH = 256;
 
-    if (canvasContext.canvas.width > textureW || canvasContext.canvas.height > textureH) {
+    if (canvas.width > textureW || canvas.height > textureH) {
       throw new Error(
-        `input canvas is too large: ${canvasContext.canvas.width}x${canvasContext.canvas.height} does not fit into ${textureW}x${textureH}`
+        `input canvas is too large: ${canvas.width}x${canvas.height} does not fit into ${textureW}x${textureH}`
       );
     }
 
-    const consoleW = canvasContext.canvas.width + padding.x * 2;
-    const consoleH = canvasContext.canvas.height + padding.y * 2;
+    const consoleW = canvas.width + padding.x * 2;
+    const consoleH = canvas.height + padding.y * 2;
 
     return [
       new THREE.Vector2(textureW, textureH),
