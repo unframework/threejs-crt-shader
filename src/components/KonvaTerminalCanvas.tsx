@@ -1,3 +1,4 @@
+// by nick.matantsev@gmail.com, code licensed under MIT
 import React, { useCallback, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { Stage, Layer } from 'react-konva';

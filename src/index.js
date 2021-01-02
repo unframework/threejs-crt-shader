@@ -1,3 +1,4 @@
+// by nick.matantsev@gmail.com, code licensed under MIT
 import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { Canvas } from 'react-three-fiber';

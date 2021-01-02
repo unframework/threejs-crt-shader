@@ -1,3 +1,4 @@
+// by nick.matantsev@gmail.com, code licensed under MIT
 import React, { useMemo } from 'react';
 import { useFrame } from 'react-three-fiber';
 import { useSpring, animated } from '@react-spring/three';

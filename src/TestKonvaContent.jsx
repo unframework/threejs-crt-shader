@@ -1,3 +1,4 @@
+// by nick.matantsev@gmail.com, code licensed under MIT
 import React, { useEffect, useState } from 'react';
 import { Rect, Line, Text, Group } from 'react-konva';
 import onecolor from 'onecolor';

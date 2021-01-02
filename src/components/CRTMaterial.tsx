@@ -1,3 +1,4 @@
+// by nick.matantsev@gmail.com, code licensed under MIT
 import React, { useCallback, useMemo, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { useFrame, MeshStandardMaterialProps } from 'react-three-fiber';
