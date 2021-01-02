@@ -177,14 +177,15 @@ export const CRTMaterial: React.FC<
 
     const textureW = 512; // @todo pick smallest possible
     const textureH = 256;
-    const consoleW = canvasContext.canvas.width + padding.x * 2;
-    const consoleH = canvasContext.canvas.height + padding.y * 2;
 
-    if (consoleW > textureW || consoleH > textureH) {
+    if (canvasContext.canvas.width > textureW || canvasContext.canvas.height > textureH) {
       throw new Error(
-        `input canvas is too large: ${consoleW}x${consoleH} (includes padding) does not fit into ${textureW}x${textureH}`
+        `input canvas is too large: ${canvasContext.canvas.width}x${canvasContext.canvas.height} does not fit into ${textureW}x${textureH}`
       );
     }
+
+    const consoleW = canvasContext.canvas.width + padding.x * 2;
+    const consoleH = canvasContext.canvas.height + padding.y * 2;
 
     return [
       new THREE.Vector2(textureW, textureH),
